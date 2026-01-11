@@ -1,109 +1,142 @@
-# SafetyFirst Extinguisher Tracker - CMS
+# D&M Fire Safety - Fire Extinguisher Tracker
 
-A content management system for tracking fire extinguisher inspections and maintenance.
+**Internal Use Only** - For use at dmfiresafety.com
 
-## Prerequisites
+A comprehensive React web application for managing fire extinguisher inspections, maintenance records, customer sites, and service tracking. Built with modern web technologies for efficient field operations and data management.
 
-- **Node.js** (version 18 or higher recommended)
-- **npm** or **yarn** package manager
+## 🎯 Project Overview
 
-## Setup Instructions
+This is a professional fire safety management system designed for internal use by D&M Fire Safety. The application provides a complete solution for:
 
-### 1. Install Dependencies
+- **Asset Management**: Track fire extinguishers, exit lights, and emergency systems across multiple customer sites
+- **Inspection Records**: Comprehensive inspection forms with checklist validation
+- **Service Tracking**: Schedule and track service cycles for customers
+- **Customer Management**: Complete customer database with contact information and service history
+- **Reporting & Analytics**: Generate reports and track audit history
+- **Run Sheets**: Organized work orders for field technicians
+- **Calendar View**: Visual service scheduling
 
-Open a terminal in the project directory and run:
+## 🛠️ Technology Stack
 
+- **React 19** - Modern UI framework
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first styling
+- **Lucide React** - Icon library
+- **LocalStorage** - Client-side data persistence (works offline)
+
+## 📋 Features
+
+### Core Functionality
+- ✅ Dashboard with overview and quick actions
+- ✅ Customer & Site Management
+- ✅ Asset Registry (Extinguishers, Exit Lights, Systems)
+- ✅ Inspection Forms with AI-powered analysis (optional)
+- ✅ Service Tracker with scheduling
+- ✅ Run Sheet Manager for field operations
+- ✅ Calendar View for service dates
+- ✅ Audit History & Reporting
+- ✅ User Authentication with biometric support
+- ✅ Dark Mode support
+
+### Optional Integrations
+- Dropbox backup/sync
+- Supabase cloud database sync
+- Voiply SMS/Voicemail integration
+- DeviceMagic form integration
+- Google Gemini AI (for inspection analysis)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/adeelfeb/dmfiresafety.git
+cd dmfiresafety
+```
+
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-This will install all required dependencies including:
-- React 19
-- Vite (build tool)
-- TypeScript
-- Lucide React (icons)
-- Google Generative AI
-- And other dependencies
-
-### 2. Run the Development Server
-
-After dependencies are installed, start the development server:
-
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-This will:
-- Start the Vite development server
-- Open your browser automatically at `http://localhost:3000`
-- Enable hot module replacement (changes reflect immediately)
+The application will be available at `http://localhost:3000` (or next available port).
 
-### 3. Access the Application
+### Default Login Credentials
 
-The application will be available at:
-- **Local URL**: `http://localhost:3000`
+**Initial Admin Account:**
+- Name: `tobey`
+- PIN: `6876`
 
-The browser should open automatically. If not, manually navigate to the URL shown in the terminal.
+*Note: Additional users can be created in the Settings panel after logging in.*
 
-## Available Scripts
+## 📦 Build for Production
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-
-## Notes
-
-- **DO NOT** open `index.html` directly in the browser. The project requires a development server to handle TypeScript compilation and module bundling.
-- All data is stored locally in your browser's localStorage.
-- The application works offline after the initial load.
-
-## Troubleshooting
-
-### Directory Name Warning
-**IMPORTANT**: If your project directory contains a "#" character (like `NEW CSM #1 (2)`), Vite may have trouble resolving files. Consider renaming the directory to remove special characters:
+To create a production build:
 
 ```bash
-# Rename the directory (example)
-mv "NEW CSM #1 (2)" "NEW-CSM-1-2"
+npm run build
 ```
 
-Then run `npm run dev` again from the renamed directory.
+The optimized build will be in the `dist/` directory, ready for deployment.
 
-### Port Already in Use
-If port 3000 is already in use, Vite will automatically try the next available port (3001, 3002, etc.). Check the terminal output for the actual URL.
+## 💾 Data Storage
 
-### "Failed to load url /index.tsx" Error
-If you see errors like "Failed to load url /index.tsx", this is usually caused by:
-1. **Directory name with "#" character** - Rename the directory (see above)
-2. **File path issues** - Ensure `index.tsx` exists in the project root
-3. **Vite cache** - Try clearing Vite cache: `rm -rf node_modules/.vite`
+- **Primary Storage**: Browser localStorage (client-side)
+- **Offline Support**: Full functionality without internet connection
+- **Export/Import**: JSON and Excel export/import available
+- **Cloud Backup**: Optional Dropbox and Supabase integrations
 
-### Module Import Errors
-If you see import errors related to `@google/genai` or `GoogleGenAI`, the code may need to be updated. The package installed is `@google/generative-ai`, which exports `GoogleGenerativeAI` (note the different class name). This may require updating the import statement in `services/geminiService.ts`.
+## 🔒 Security & Access
 
-### Installation Issues
-If you encounter installation errors:
-1. Make sure you have Node.js 18+ installed: `node --version`
-2. Clear npm cache: `npm cache clean --force`
-3. Delete `node_modules` folder and `package-lock.json`, then run `npm install` again
+- User authentication with PIN-based login
+- Role-based access (Admin/Tech)
+- Biometric authentication support (TouchID/FaceID)
+- Internal use only - designed for dmfiresafety.com
 
-## Project Structure
+## 📁 Project Structure
 
-- `components/` - React components
-- `services/` - Business logic and API integrations
-- `hooks/` - Custom React hooks
-- `types.ts` - TypeScript type definitions
-- `App.tsx` - Main application component
-- `index.tsx` - Application entry point
-- `index.html` - HTML template
+```
+├── components/        # React UI components
+├── services/          # Business logic & API integrations
+├── hooks/             # Custom React hooks
+├── types.ts           # TypeScript type definitions
+├── App.tsx            # Main application component
+├── index.tsx          # Application entry point
+└── index.html         # HTML template
+```
 
-## Development
+## 🌐 Deployment
 
-The project uses:
-- **Vite** for fast development and building
-- **React 19** for the UI framework
-- **TypeScript** for type safety
-- **Tailwind CSS** (via CDN) for styling
-- **Lucide React** for icons
+This application is designed for deployment to web hosting (e.g., GoDaddy). The production build creates static files that can be served from any web server.
 
-Happy coding! 🔥
+**Production Build Steps:**
+1. Run `npm run build`
+2. Deploy the `dist/` folder contents to your web hosting
+3. Configure server to serve `index.html` for all routes (SPA routing)
+
+## 📝 Notes
+
+- All data is stored locally in the browser's localStorage
+- The application works completely offline after initial load
+- Each browser/device maintains separate data
+- Optional cloud sync can be configured in Settings
+
+## 👥 Support
+
+For questions or issues related to this application, please contact the development team.
+
+---
+
+**D&M Fire Safety** | Internal Use | dmfiresafety.com
