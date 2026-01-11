@@ -1,0 +1,9 @@
+{
+  "name": "NEW CSM #1",
+  "description": "Professional fire safety management with AI Vision for defect detection and compliance tracking.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera",
+    "geolocation"
+  ]
+}

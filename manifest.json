@@ -1,0 +1,21 @@
+
+{
+  "name": "D&M Fire Safety Tracker",
+  "short_name": "D&M Fire",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/740/740935.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/740/740935.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
